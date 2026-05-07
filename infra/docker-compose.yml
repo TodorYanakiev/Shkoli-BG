@@ -1,6 +1,6 @@
 services:
   backend:
-    image: ${DOCKERHUB_NAMESPACE:-tyanakiev}/educationnearby-backend:${IMAGE_TAG:-2026-02-25}
+    image: ${DOCKERHUB_NAMESPACE:-tyanakiev}/educationnearby-backend:${IMAGE_TAG:-latest}
     pull_policy: always
     restart: unless-stopped
     ports:
@@ -27,14 +27,15 @@ services:
       start_period: 20s
 
   landing:
-    image: ${DOCKERHUB_NAMESPACE:-tyanakiev}/educationnearby-landing:${IMAGE_TAG:-2026-02-25}
+    image: ${DOCKERHUB_NAMESPACE:-tyanakiev}/educationnearby-landing:2026-02-25
     pull_policy: always
     restart: unless-stopped
 
   main:
-    image: ${DOCKERHUB_NAMESPACE:-tyanakiev}/educationnearby-main:${IMAGE_TAG:-2026-02-25}
+    image: ${DOCKERHUB_NAMESPACE:-tyanakiev}/educationnearby-main:${IMAGE_TAG:-latest}
     pull_policy: always
     restart: unless-stopped
+
   gateway:
     image: nginx:1.27-alpine
     restart: unless-stopped
